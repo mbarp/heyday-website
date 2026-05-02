@@ -173,7 +173,7 @@
     .hero-image {
       position: absolute;
       inset: -5% -8%;
-      background-image: url('images/heroo-image.jpg');
+      background-image: url('images/hero-image.jpg');
       background-size: cover;
       background-position: center 30%;
       transition: transform 0.1s linear;
@@ -196,7 +196,7 @@
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);
-      background: url('http://localhost:3845/assets/6fe421fa97a1650541b70f5cee5f321599859361.svg') center/cover no-repeat;
+      background: var(--white);
       width: min(560px, 90vw);
       padding: 44px 48px 52px;
       border-radius: 12px 12px 0 0;
@@ -261,7 +261,7 @@
     /* Figma: card = photo (rounded top corners 24px) + title (Mixta Pro 36px) + desc + orange button
        Card frame SVG: 94d478d1 (updated in latest Figma) */
     .room-card {
-      background: url('http://localhost:3845/assets/94d478d1670b4269e69b19f0baea78ad87a154af.svg') center/cover no-repeat;
+      background: var(--white);
       border-radius: 24px;
       overflow: hidden;
       display: flex;
@@ -593,10 +593,7 @@
   <nav id="navbar">
 
     <a href="#" class="nav-logo">
-      <img
-        src="http://localhost:3845/assets/b00f447ef93b461fa8708063738ca70050d400c4.png"
-        alt="HeyDay Hotel"
-      />
+      <span style="font-family:var(--font-display);font-size:clamp(20px,2vw,28px);font-weight:600;color:var(--dark);letter-spacing:0.02em;">HeyDay Hotel</span>
     </a>
 
     <ul class="nav-links">
@@ -662,7 +659,7 @@
       <div class="room-card fade-up">
         <div class="room-card-image">
           <img
-            src="http://localhost:3845/assets/2ec87c12b7c7760669f35a470f430cffd414c0e1.png"
+            src="images/Firefly_luxury five star hotel in the swiss alps. luxury interior of a 5 room suite. majestet 82932.jpg"
             alt="Deluxe Room — luxury interior"
           />
         </div>
@@ -679,7 +676,7 @@
       <div class="room-card fade-up">
         <div class="room-card-image">
           <img
-            src="http://localhost:3845/assets/b34968ad4bae25361ea6f1ef95e80be733ee19da.png"
+            src="images/Firefly_luxury five star hotel in the swiss alps. luxury interior of a 5 room suite. majestet 652423.jpg"
             alt="Junior Suite — luxury interior"
           />
         </div>
@@ -696,7 +693,7 @@
       <div class="room-card fade-up">
         <div class="room-card-image">
           <img
-            src="http://localhost:3845/assets/b34968ad4bae25361ea6f1ef95e80be733ee19da.png"
+            src="images/Firefly_luxury five star hotel in the swiss alps. luxury interior of a 5 room suite. majestet 652423 (1).jpg"
             alt="Prestige Suite — luxury interior"
           />
         </div>
@@ -778,11 +775,7 @@
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <img
-          class="footer-logo-img"
-          src="http://localhost:3845/assets/b00f447ef93b461fa8708063738ca70050d400c4.png"
-          alt="HeyDay Hotel"
-        />
+        <span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--white);letter-spacing:0.02em;display:block;margin-bottom:14px;">HeyDay Hotel</span>
         <p class="footer-tagline">A place where every day feels like a getaway. Luxury redefined.</p>
       </div>
 
