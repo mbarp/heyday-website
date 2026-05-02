@@ -52,18 +52,19 @@
 
     nav.scrolled { box-shadow: 0 4px 32px rgba(0,0,0,0.08); }
 
-    /* Logo — uses actual Figma image asset */
     .nav-logo {
       display: flex;
       align-items: center;
+      gap: 10px;
       text-decoration: none;
-      height: 54px;
     }
 
-    .nav-logo img {
-      height: 100%;
-      width: auto;
-      object-fit: contain;
+    .nav-logo-text {
+      font-family: var(--font-body);
+      font-size: clamp(18px, 1.8vw, 24px);
+      font-weight: 600;
+      color: var(--orange);
+      letter-spacing: 0.01em;
     }
 
     /* Nav links — Figma: Aktiv Grotesk Medium 30px, color #e87e15, centered */
@@ -190,16 +191,16 @@
       );
     }
 
-    /* Figma: SVG card shape bottom-centre, contains heading + two buttons */
+    /* Figma: cream card bottom-centre, overlaps hero image */
     .hero-card {
       position: absolute;
       left: 50%;
       bottom: 0;
       transform: translateX(-50%);
-      background: var(--white);
-      width: min(560px, 90vw);
-      padding: 44px 48px 52px;
-      border-radius: 12px 12px 0 0;
+      background: #FEF5E7;
+      width: min(640px, 88vw);
+      padding: 44px 52px 56px;
+      border-radius: 16px 16px 0 0;
       animation: cardRise 0.9s cubic-bezier(0.22,1,0.36,1) 0.2s both;
     }
 
@@ -262,8 +263,8 @@
        Card frame SVG: 94d478d1 (updated in latest Figma) */
     .room-card {
       background: var(--white);
-      border-radius: 24px;
-      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
       display: flex;
       flex-direction: column;
       transition: transform 0.28s ease, box-shadow 0.28s ease;
@@ -275,12 +276,20 @@
       box-shadow: 0 16px 48px rgba(0,0,0,0.13);
     }
 
-    /* Photo top — Figma: rounded top only (24px), fixed height ~319px */
+    /* Photo — inset with padding, all corners rounded */
     .room-card-image {
-      height: 260px;
-      border-radius: 24px 24px 0 0;
+      height: 240px;
+      margin: 12px 12px 0;
+      border-radius: 14px;
       overflow: hidden;
       position: relative;
+    }
+
+    .room-card-image-empty {
+      height: 240px;
+      margin: 12px 12px 0;
+      border-radius: 14px;
+      background: var(--sand);
     }
 
     .room-card-image img {
@@ -292,9 +301,8 @@
 
     .room-card:hover .room-card-image img { transform: scale(1.05); }
 
-    /* Body below photo — sits on sand directly (transparent bg) */
     .room-card-body {
-      padding: 24px 4px 32px;
+      padding: 20px 20px 28px;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -322,10 +330,10 @@
       text-align: center;
     }
 
-    /* Figma: "Learn more" — orange pill, white text, bold, centred */
+    /* Figma: "Learn more" — orange pill, white text, bold, left-aligned */
     .room-btn-wrap {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     /* ══════════════════════════════════════
@@ -593,7 +601,16 @@
   <nav id="navbar">
 
     <a href="#" class="nav-logo">
-      <span style="font-family:var(--font-display);font-size:clamp(20px,2vw,28px);font-weight:600;color:var(--dark);letter-spacing:0.02em;">HeyDay Hotel</span>
+      <svg viewBox="0 0 52 42" width="42" height="42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- H -->
+        <rect x="0" y="1" width="7" height="40" rx="2" fill="#e87e15"/>
+        <rect x="11" y="1" width="7" height="40" rx="2" fill="#e87e15"/>
+        <rect x="0" y="17" width="18" height="7" rx="1.5" fill="#e87e15"/>
+        <!-- D -->
+        <rect x="23" y="1" width="7" height="40" rx="2" fill="#e87e15"/>
+        <path d="M30 1 Q52 1 52 21 Q52 41 30 41" fill="none" stroke="#e87e15" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="nav-logo-text">HeyDay</span>
     </a>
 
     <ul class="nav-links">
@@ -691,12 +708,7 @@
 
       <!-- Card 3: Prestige Suite -->
       <div class="room-card fade-up">
-        <div class="room-card-image">
-          <img
-            src="images/Firefly_luxury five star hotel in the swiss alps. luxury interior of a 5 room suite. majestet 652423 (1).jpg"
-            alt="Prestige Suite — luxury interior"
-          />
-        </div>
+        <div class="room-card-image-empty"></div>
         <div class="room-card-body">
           <h3 class="room-title">Prestige Suite</h3>
           <p class="room-desc">Our prestige suites gives the space you need with breathtaking view of the alps.</p>
@@ -775,7 +787,16 @@
   <footer>
     <div class="footer-top">
       <div class="footer-brand">
-        <span style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--white);letter-spacing:0.02em;display:block;margin-bottom:14px;">HeyDay Hotel</span>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+          <svg viewBox="0 0 52 42" width="34" height="34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="0" y="1" width="7" height="40" rx="2" fill="#e87e15"/>
+            <rect x="11" y="1" width="7" height="40" rx="2" fill="#e87e15"/>
+            <rect x="0" y="17" width="18" height="7" rx="1.5" fill="#e87e15"/>
+            <rect x="23" y="1" width="7" height="40" rx="2" fill="#e87e15"/>
+            <path d="M30 1 Q52 1 52 21 Q52 41 30 41" fill="none" stroke="#e87e15" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span style="font-family:var(--font-body);font-size:20px;font-weight:600;color:var(--white);letter-spacing:0.01em;">HeyDay</span>
+        </div>
         <p class="footer-tagline">A place where every day feels like a getaway. Luxury redefined.</p>
       </div>
 
